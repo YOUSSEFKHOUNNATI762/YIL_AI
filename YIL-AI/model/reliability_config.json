@@ -1,0 +1,21 @@
+{
+  "method": "top1_minus_top2_linear_svc_decision_score",
+  "margin_threshold": 0.3238222803105735,
+  "target_validation_accuracy_for_accepted": 0.95,
+  "validation_year": 2023,
+  "validation_rows": 9400,
+  "validation_accepted_rows": 8991,
+  "validation_coverage": 0.9564893617021276,
+  "validation_accuracy_accepted": 0.9500611722833945,
+  "validation_accuracy_review": 0.5574572127139364,
+  "test_years": [
+    2024,
+    2025
+  ],
+  "test_rows": 22263,
+  "test_coverage_at_frozen_threshold": 0.956968961954813,
+  "test_accuracy_accepted_audit": 0.9586012673081437,
+  "test_accuracy_review_audit": 0.5532359081419624,
+  "model_selected": "linear_svc_balanced",
+  "warning": "Seuil heuristique calibre sur la validation 2023 avec un modele entraine sur 2015-2022. Le score LinearSVC n'est pas une probabilite."
+}

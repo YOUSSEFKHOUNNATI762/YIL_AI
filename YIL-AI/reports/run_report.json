@@ -1,0 +1,179 @@
+{
+  "created_at_utc": "2026-10-25T13:29:37.810023+00:00",
+  "scope": "Étape 2A uniquement : classification des chapitres JASC B737-800",
+  "input": {
+    "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_cleaning\\faa_sdr_b737800_jasc_ml.csv.gz",
+    "sha256": "0f5067a50078b77dd8027adb97cf687adb92ce9916591b99b7735df71b1951a2",
+    "rows": 76728
+  },
+  "split": {
+    "train_2015_2022": 45065,
+    "validation_2023": 9400,
+    "test_2024_2025": 22263
+  },
+  "method": {
+    "selection_metric": "macro_f1",
+    "selected_model": "linear_svc_balanced",
+    "random_state": 42,
+    "tfidf": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.995,
+      "max_features": 80000,
+      "final_features": 80000
+    },
+    "vectorize_train_validation_seconds": 10.378186100002495,
+    "vectorize_final_seconds": 18.273947800000315
+  },
+  "validation_results": [
+    {
+      "phase": "validation_2023",
+      "candidate": "dummy_most_frequent",
+      "selected": false,
+      "train_rows": 45065,
+      "evaluation_rows": 9400,
+      "tfidf_features": 80000,
+      "fit_seconds": 0.056805600004736334,
+      "warnings_count": 0,
+      "warnings": "",
+      "accuracy": 0.4351063829787234,
+      "balanced_accuracy": 0.029411764705882353,
+      "macro_precision": 0.012797246558197747,
+      "macro_recall": 0.029411764705882353,
+      "macro_f1": 0.017834561548859724,
+      "weighted_precision": 0.18931756450882753,
+      "weighted_recall": 0.4351063829787234,
+      "weighted_f1": 0.26383767329621627,
+      "top3_accuracy": 0.6475531914893617,
+      "score_type": "class_prior",
+      "evaluation_classes": 34,
+      "labels_unknown_to_model": 0
+    },
+    {
+      "phase": "validation_2023",
+      "candidate": "logistic_regression_balanced",
+      "selected": false,
+      "train_rows": 45065,
+      "evaluation_rows": 9400,
+      "tfidf_features": 80000,
+      "fit_seconds": 576.1134669999883,
+      "warnings_count": 1,
+      "warnings": "The max_iter was reached which means the coef_ did not converge",
+      "accuracy": 0.8693617021276596,
+      "balanced_accuracy": 0.7312794415791689,
+      "macro_precision": 0.7084901423706661,
+      "macro_recall": 0.7103857432483354,
+      "macro_f1": 0.6767356881331644,
+      "weighted_precision": 0.9064637600591905,
+      "weighted_recall": 0.8693617021276596,
+      "weighted_f1": 0.881278765412291,
+      "top3_accuracy": 0.9740425531914894,
+      "score_type": "probability",
+      "evaluation_classes": 34,
+      "labels_unknown_to_model": 0
+    },
+    {
+      "phase": "validation_2023",
+      "candidate": "linear_svc_balanced",
+      "selected": true,
+      "train_rows": 45065,
+      "evaluation_rows": 9400,
+      "tfidf_features": 80000,
+      "fit_seconds": 15.771485599994776,
+      "warnings_count": 0,
+      "warnings": "",
+      "accuracy": 0.9329787234042554,
+      "balanced_accuracy": 0.8109295196996683,
+      "macro_precision": 0.8322730582119612,
+      "macro_recall": 0.8109295196996683,
+      "macro_f1": 0.8134966198864869,
+      "weighted_precision": 0.9328838697600169,
+      "weighted_recall": 0.9329787234042554,
+      "weighted_f1": 0.9314641782226103,
+      "top3_accuracy": 0.9785106382978723,
+      "score_type": "decision_function",
+      "evaluation_classes": 34,
+      "labels_unknown_to_model": 0
+    }
+  ],
+  "test_result": {
+    "phase": "test_2024_2025",
+    "candidate": "linear_svc_balanced",
+    "selected": true,
+    "train_rows": 54465,
+    "evaluation_rows": 22263,
+    "tfidf_features": 80000,
+    "fit_seconds": 17.962032700001146,
+    "warnings_count": 0,
+    "warnings": "",
+    "accuracy": 0.9411579751156628,
+    "balanced_accuracy": 0.6983946570348992,
+    "macro_precision": 0.7332414435071012,
+    "macro_recall": 0.6983946570348992,
+    "macro_f1": 0.6923686245259388,
+    "weighted_precision": 0.9424148203029331,
+    "weighted_recall": 0.9411579751156628,
+    "weighted_f1": 0.939626297027986,
+    "top3_accuracy": 0.9814939585859948,
+    "score_type": "decision_function",
+    "evaluation_classes": 37,
+    "labels_unknown_to_model": 1
+  },
+  "quality_checks": {
+    "unique_record_ids": true,
+    "missing_required_values": 0,
+    "validation_unseen_chapters": [],
+    "test_unseen_chapters_vs_train_validation": [
+      "14"
+    ],
+    "test_prediction_rows": 22263,
+    "prediction_ids_unique": true
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "scikit_learn": "1.9.1"
+  },
+  "outputs": {
+    "comparison": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\model_comparison.csv",
+      "bytes": 1458,
+      "sha256": "e34717d4e657b9c554244373631a018d4eee0bdee100828c3152c629bfdcb220"
+    },
+    "per_class": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\test_metrics_per_class.csv",
+      "bytes": 2239,
+      "sha256": "9d6fbaf448d547cc28d5ef29f2d3778be74587a85525945bc00678fd195ea86d"
+    },
+    "predictions": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\test_predictions.csv.gz",
+      "bytes": 2665833,
+      "sha256": "5827826b636d915727e53c6617331c3e16b132a9216ba7482f717890443077f5"
+    },
+    "confusions": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\test_top_confusions.csv",
+      "bytes": 1882,
+      "sha256": "82d823569169607483880282d618f3bdcad2733afb51c9b0a047bb72b1a5f45f"
+    },
+    "plot": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\test_confusion_matrix_normalized.png",
+      "bytes": 148862,
+      "sha256": "2bfb5b6e4ed45dcc2016e81bfb65df1aca0aa765fc4f2b8c62cc8a0316bf46b5"
+    },
+    "model": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\best_jasc_chapter_model.joblib",
+      "bytes": 8711527,
+      "sha256": "3f60b682b0e832fa9500919892580ff1c7749f15bfb045504155e49699e62709"
+    },
+    "model_card": {
+      "path": "C:\\Users\\Hp\\Documents\\ChatGPT\\YIL Predictive Systems\\outputs\\faa_jasc_stage2a\\model_card.md",
+      "bytes": 1918,
+      "sha256": "2ad9053a93d56e94400ffcbdb6901806e7f6cc7275666fe064aa628b5978fada"
+    }
+  }
+}

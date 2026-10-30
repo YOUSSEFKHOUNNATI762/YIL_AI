@@ -1,0 +1,67 @@
+/* YIL AI. Styles target app-owned keys and stable Streamlit regions. */
+:root { --navy:#0b1726; --panel:#14263b; --border:#294057; --muted:#94a3b8; --cyan:#38bdf8; }
+[data-testid="stApp"] {
+  background: radial-gradient(ellipse at 92% 1%, #163e64 0%, transparent 33%),
+              radial-gradient(ellipse at 0% 95%, #0b2d50 0%, transparent 31%),
+              #0b1726;
+  background-attachment: fixed;
+}
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stMainBlockContainer"] { max-width: 1510px; padding: 3.5rem 2.2rem 2rem; }
+[data-testid="stSidebar"] { background: #0e2034; border-right: 1px solid #294057; }
+[data-testid="stSidebarUserContent"] { padding: 1.5rem 1.1rem; }
+.st-key-brand { padding: .3rem .25rem 1.5rem; }
+.st-key-brand h1 { font-size: 1.5rem; letter-spacing: -.04em; }
+.st-key-brand [data-testid="stCaptionContainer"] { letter-spacing: .1em; font-size: .67rem; color: #91bbd8; }
+[data-testid="stSidebar"] button { min-height: 2.8rem; justify-content: flex-start; }
+[data-testid="stSidebar"] button[kind="secondary"] { border-color: #2563eb90; background: #1d4373; }
+.st-key-sidebar_status { margin-top: 2rem; background: #142b44; border-color: #315575 !important; border-radius: 16px !important; }
+.st-key-topbar { min-height: 3rem; padding: .55rem 1rem; border: 1px solid #294057; border-radius: 14px; background: #11253aa8; }
+.st-key-topbar p { font-size: .88rem; }
+.st-key-hero {
+  background: radial-gradient(circle at 93% 12%, #1a67a060 0%, transparent 30%),
+              linear-gradient(125deg, #172d46 0%, #123859 60%, #174a69 100%);
+  border: 1px solid #38678a !important; border-radius: 24px !important;
+  padding: 2.6rem !important; margin-top: 1.4rem;
+  box-shadow: 0 18px 42px #02091840;
+}
+.st-key-hero h1 { font-size: clamp(2rem,3.5vw,3.5rem); letter-spacing: -.06em; line-height: 1.1; max-width: 780px; }
+.st-key-hero [data-testid="stCaptionContainer"] p { color: #abd8ee; }
+.st-key-hero > div p { max-width: 790px; }
+.st-key-metric_row { margin: .7rem 0 1.2rem; }
+.st-key-metric_row [data-testid="stMetric"] { background: #142a42; border: 1px solid #2b4c6b !important; border-radius: 16px; padding: 1rem; min-width: 180px; }
+.st-key-metric_row [data-testid="stMetricValue"] { font-weight: 650; letter-spacing: -.04em; color: #e6f6ff; }
+.st-key-overview_workflow, .st-key-overview_scope, .st-key-input_card,
+.st-key-result_empty, .st-key-example_card, .st-key-scope_card, .st-key-batch_card,
+.st-key-history_card, .st-key-model_compare, .st-key-metric_guide, .st-key-class_perf,
+.st-key-class_volume, .st-key-confusions, .st-key-method_pipeline,
+.st-key-method_details, .st-key-method_limits, .st-key-reference_card, .st-key-sources_card {
+  background: #14263beb; border: 1px solid #294057 !important;
+  border-radius: 19px !important; padding: 1.45rem !important;
+  box-shadow: 0 12px 30px #03091618;
+}
+.st-key-primary_result {
+  background: linear-gradient(130deg, #123e5e, #183a59 50%, #152a42);
+  border: 1px solid #3a7899 !important; border-radius: 20px !important;
+  padding: 1.6rem !important; box-shadow: 0 16px 32px #04101f52;
+}
+.st-key-primary_result [data-testid="stMetricValue"] { font-size: 3rem; letter-spacing: -.07em; color: #e5f9ff; }
+.st-key-primary_result h3 { font-size: 1.45rem; }
+.st-key-primary_result .stMarkdownBadge { color: #e5f8ff !important; background: #275c81 !important; border-radius: 7px; padding: .3rem .6rem; }
+.st-key-alternative_2, .st-key-alternative_3 { background: #122b43; border-color: #315472 !important; border-radius: 15px !important; }
+.st-key-overview_examples button, .st-key-example_card button { border-color: #315472; background: #17334e; }
+.st-key-input_card textarea { background: #0d1e30; border-color: #36506b; border-radius: 12px; line-height: 1.6; }
+.st-key-input_actions button, .st-key-export_row button { margin-top: .2rem; }
+[data-testid="stMain"] h2 { letter-spacing: -.045em; }
+[data-testid="stMain"] h3 { letter-spacing: -.025em; }
+[data-testid="stMain"] [data-testid="stCaptionContainer"] { color: #adc0d1; }
+button[kind="primary"] { background: #2563eb; border-color: #4883ff; color: #fff; font-weight: 600; }
+button[kind="primary"]:hover { background: #1e55cc; border-color: #71a1ff; color: #fff; }
+button { transition: background-color .15s ease, border-color .15s ease, transform .15s ease; }
+button:hover { transform: translateY(-1px); }
+button:focus-visible, a:focus-visible { outline: 3px solid #7dd3fc !important; outline-offset: 2px; }
+.st-key-footer { padding: 1.3rem .2rem 0; border-top: 1px solid #243c55; margin-top: 2rem; }
+.st-key-footer p { font-size: .76rem; color: #a4bacd; }
+@media (max-width: 900px) { [data-testid="stMainBlockContainer"] { padding: 3.4rem 1.1rem 2rem; } .st-key-hero { padding: 1.6rem !important; } }
+@media (max-width: 640px) { .st-key-hero h1 { font-size: 2rem; } .st-key-topbar { margin-top: .1rem; } .st-key-primary_result [data-testid="stMetricValue"] { font-size: 2.4rem; } }
+@media (prefers-reduced-motion: reduce) { button { transition: none; } button:hover { transform: none; } }
